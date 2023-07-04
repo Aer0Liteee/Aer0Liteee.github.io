@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>GNN-summary.md | Aer0Lite</title><meta name="author" content="Aer0Lite"><meta name="copyright" content="Aer0Lite"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="# GNN # 应用领域      场景分析与问题推理、推荐系统、欺诈检测、知识图谱、道路交通、自动驾驶、化学医疗场景...... # 图基本模块定义    GNN 又称图神经网络，是一种直接作用于图结构的神经网络，我们可以把图中的每一个结点 V 当作个体对象，而每一条边 E 当作个体与个体间的某种联系，所有结点组成的关系网就是最后的图 U   # 邻接矩阵的定义      用于表示结点之间相邻的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GNN-summary.md">
+<meta property="og:url" content="http://aer0liteee.github.io/post/dee9649a.html">
+<meta property="og:site_name" content="Aer0Lite">
+<meta property="og:description" content="# GNN # 应用领域      场景分析与问题推理、推荐系统、欺诈检测、知识图谱、道路交通、自动驾驶、化学医疗场景...... # 图基本模块定义    GNN 又称图神经网络，是一种直接作用于图结构的神经网络，我们可以把图中的每一个结点 V 当作个体对象，而每一条边 E 当作个体与个体间的某种联系，所有结点组成的关系网就是最后的图 U   # 邻接矩阵的定义      用于表示结点之间相邻的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://aer0liteee.github.io/img/avater.jpg">
+<meta property="article:published_time" content="2023-07-04T16:10:08.000Z">
+<meta property="article:modified_time" content="2023-07-04T16:10:17.816Z">
+<meta property="article:author" content="Aer0Lite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://aer0liteee.github.io/img/avater.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://aer0liteee.github.io/post/dee9649a.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GNN-summary.md',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-05 00:10:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script> <script src="/js/ClipboardJS.js"></script> <link rel="stylesheet" href="/css/universe.css"> <link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"> <script src="/js/sun_moon.js" async></script> <script src="/js/inform.js" async></script> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css"> <script src="https://ali-oss.xmwpro.com/cdn/js/three.min.js"></script><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div class="float-box left top"></div><div class="float-box left bottom"></div><div class="float-box right top"></div><div class="float-box right bottom"></div><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="canvas-container" id="canvas"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Aer0Lite"><span class="site-name">Aer0Lite</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">GNN-summary.md</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-04T16:10:08.000Z" title="发表于 2023-07-05 00:10:08">2023-07-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-04T16:10:17.816Z" title="更新于 2023-07-05 00:10:17">2023-07-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="GNN-summary.md"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="gnn"><a class="markdownIt-Anchor" href="#gnn">#</a> GNN</h1>
+<h4 id="应用领域"><a class="markdownIt-Anchor" href="#应用领域">#</a> 应用领域</h4>
+<ul>
+<li></li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">场景分析与问题推理、推荐系统、欺诈检测、知识图谱、道路交通、自动驾驶、化学医疗场景......</span><br></pre></td></tr></table></figure>
+<h4 id="图基本模块定义"><a class="markdownIt-Anchor" href="#图基本模块定义">#</a> 图基本模块定义</h4>
+<ul>
+<li>
+<img src="F:\TODOIT\GNN\1.png" alt="1" style="zoom:150%;" />
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GNN 又称图神经网络，是一种直接作用于图结构的神经网络，我们可以把图中的每一个结点 V 当作个体对象，而每一条边 E 当作个体与个体间的某种联系，所有结点组成的关系网就是最后的图 U</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="邻接矩阵的定义"><a class="markdownIt-Anchor" href="#邻接矩阵的定义">#</a> 邻接矩阵的定义</h4>
+<ul>
+<li>
+<img src="F:\TODOIT\GNN\2.png" alt="2" style="zoom:50%;" />
+<blockquote>
+<ul>
+<li>用于表示结点之间相邻的情况，由于图的稀疏性，因此一般的邻接矩阵不是一个 N*N 的矩阵，而保留了 **(source,target)** 的形式，如 [1,0] 则表示起点为 1 终点为 0。</li>
+<li>每个点通过与它相邻的<strong>邻居</strong>来进行<strong>更新</strong>，更新的方式可以自己设置。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="适用规则"><a class="markdownIt-Anchor" href="#适用规则">#</a> 适用规则</h4>
+<ul>
+<li></li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GNN主要用于解决输入数据不规则的时候，由于图像和文本任务中输入格式很固定，因此图模型并不常用，图网络和其他的神经网络类似都是需要进行特征提取</span><br></pre></td></tr></table></figure>
+<h4 id="消息传递方法计算"><a class="markdownIt-Anchor" href="#消息传递方法计算">#</a> 消息传递方法计算</h4>
+<ul>
+<li>
+<p>每个点的特征该如何更新？</p>
+<ul>
+<li>
+<p>考虑<strong>自身</strong>的特征与<strong>邻居</strong>的特征。</p>
+</li>
+<li>
+<p><img src="F:%5CTODOIT%5CGNN%5C3.png" alt="3"></p>
+</li>
+<li>
+<img src="F:\TODOIT\GNN\5.png" alt="5" style="zoom: 150%;" />
+<blockquote>
+<p>​					自身特征：<strong>h/x</strong>	可学习参数 (相连边的权值)：<strong>W</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>特征更新的方法有很多，可以根据任务自己设置</p>
+<ul>
+<li>
+<img src="F:\TODOIT\GNN\4.png" alt="3" style="zoom:50%;" />
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多层gcn的作用"><a class="markdownIt-Anchor" href="#多层gcn的作用">#</a> 多层 GCN 的作用</h4>
+<ul>
+<li>
+<p>GCN 可以有多层（本质即更新各部分的特征）</p>
+<p><img src="F:%5CTODOIT%5CGNN%5C6.png" alt="6"></p>
+</li>
+<li>
+<p>GNN 可以设置为多层结构时的<strong>输入</strong>和<strong>输出</strong>都是特征，邻接矩阵不会改变，但每个点上面的特征会发生改变。多层的 GNN 会包含更多的邻居，相当于此时的 **“感受野”**（<u>卷积神经网络名词，可理解为接触到的全局的信息范围）</u><strong>增大</strong>，当每个点具有全局的特征时，此时类似于 transformer 的形式。</p>
+</li>
+<li>
+<h5 id="输出特征的作用"><a class="markdownIt-Anchor" href="#输出特征的作用">#</a> 输出特征的作用</h5>
+<ul>
+<li>各个点 / 边特征组合后可以进行图分类…</li>
+</ul>
+</li>
+<li>
+<h5 id="为什么要做多层gcn"><a class="markdownIt-Anchor" href="#为什么要做多层gcn">#</a> 为什么要做多层 GCN？</h5>
+<ul>
+<li>可以使结点具有<strong>全局的特征</strong>，GCN 主要聚合邻结点的信息，对于任意一个结点，结点特征每迭代依次，就聚合了更高阶的邻结点的信息。随着 GCN 层数的增加，结点的聚合半径（最高邻居结点的阶数）也变大，一旦达到某个阈值，该结点覆盖全图结点。</li>
+<li><strong>但是</strong>，如果层数很多，每个结点覆盖的结点都会收敛到全图，这就导致每个结点的局部网络结构的多样性大大降低，对于结点自身特征的学习反而不好。</li>
+</ul>
+</li>
+</ul>
+<h4 id="gcn基本模型概述"><a class="markdownIt-Anchor" href="#gcn基本模型概述">#</a> GCN 基本模型概述</h4>
+<ul>
+<li>适合做<strong>半监督任务</strong>，用某个结点的少量数据也能进行训练</li>
+</ul>
+<h4 id="图卷积的基本计算方法"><a class="markdownIt-Anchor" href="#图卷积的基本计算方法">#</a> 图卷积的基本计算方法</h4>
+<ul>
+<li>
+<p>GCN 基本思想：</p>
+<p>​	<strong>消息传递 / 聚合</strong>，即<u>平均其自身与邻居特征后传入神经网络</u>（下图橙色结点为例）。</p>
+<p><img src="F:%5CTODOIT%5CGNN%5C7.png" alt="7"></p>
+</li>
+<li>
+<p>网络层数：</p>
+<p>​    GCN 可以做多层，但一般浅做 2、3 层较合适 (6 个人认识全世界理论)，不会很多层</p>
+<p><img src="F:%5CTODOIT%5CGNN%5C8.png" alt="8"></p>
+<p>​                                                 <u>最后得到每个点的特征向量</u></p>
+</li>
+<li>
+<p>图中基本组成：</p>
+<ul>
+<li>
+<p><strong>G</strong>—— 图</p>
+</li>
+<li>
+<p><strong>A</strong>—— 邻接矩阵</p>
+</li>
+<li>
+<p><strong>D</strong>—— 各个结点</p>
+</li>
+<li>
+<p><strong>F</strong>—— 每个结点的特征</p>
+<p><img src="F:%5CTODOIT%5CGNN%5C9.png" alt="9"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>特征计算方法：</p>
+<ul>
+<li><strong>矩阵乘法</strong></li>
+<li><img src="F:%5CTODOIT%5CGNN%5C10.png" alt="10"></li>
+</ul>
+</li>
+</ul>
+<h4 id="邻接的矩阵的变换"><a class="markdownIt-Anchor" href="#邻接的矩阵的变换">#</a> 邻接的矩阵的变换</h4>
+<ul>
+<li>考虑自身（将度矩阵考虑进去）</li>
+<li>左乘对<strong>行</strong>做<u>归一化</u>操作 + 右乘对<strong>列</strong>做<u>归一化</u>操作（归一化：简化计算的操作）</li>
+</ul>
+<p>​															大致想法（下图）</p>
+<ul>
+<li><img src="F:%5CTODOIT%5CGNN%5C11.png" alt="11"></li>
+</ul>
+<h4 id="ugcn基本原理定义u"><a class="markdownIt-Anchor" href="#ugcn基本原理定义u">#</a> <u>GCN 基本原理 / 定义</u></h4>
+<ul>
+<li>
+<p><img src="F:%5CTODOIT%5CGNN%5C12.png" alt="12"></p>
+<ul>
+<li><strong>ReLU</strong>，全称为：Rectified Linear Unit，是一种人工神经网络中常用的激活函数，通常意义下，其指代数学中的斜坡函数，即 <u>f ( x ) = max ⁡ ( 0 , x )</u><br>
+<img src="F:%5CTODOIT%5CGNN%5C13.png" alt="13"></li>
+</ul>
+</li>
+<li>
+<p>GCN 层数</p>
+<ul>
+<li>在多个图数据集中，都可以发现两三层比较合适，多反而差了。</li>
+<li><img src="F:%5CTODOIT%5CGNN%5C14.png" alt="14"></li>
+</ul>
+</li>
+</ul>
+<h4 id="pytorch-geometric工具包安装与配置方法略"><a class="markdownIt-Anchor" href="#pytorch-geometric工具包安装与配置方法略">#</a> PyTorch Geometric 工具包安装与配置方法（略）</h4>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1j8411876K?p=12&amp;vd_source=d1abfb72c73986bf3b64ed4a087cdf09%EF%BC%88">https://www.bilibili.com/video/BV1j8411876K?p=12&amp;vd_source=d1abfb72c73986bf3b64ed4a087cdf09（</a><u>Pytorch Gepmetric</u>）</p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/pointer_onlysoul/article/details/121354353?utm_medium=distribute.pc_relevant.none-task-blog-2">https://blog.csdn.net/pointer_onlysoul/article/details/121354353?utm_medium=distribute.pc_relevant.none-task-blog-2</a><sub>default</sub>baidujs_baidulandingword~default-0-121354353-blog-109139329.235<sup>v35</sup>pc_relevant_default_base3&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=1</p>
+<p>（<u>Anaconda+PyTorch 安装（非英伟达显卡 + win10+Python3.8）</u>）</p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/C_chuxin/article/details/82690093">https://blog.csdn.net/C_chuxin/article/details/82690093</a></p>
+<p>​				(本<u>地 python 库与新装 Anaconda 库并存</u>)</p>
+</li>
+</ul>
+<h4 id="数据集与邻接矩阵格式karateclub空手道俱乐部案例"><a class="markdownIt-Anchor" href="#数据集与邻接矩阵格式karateclub空手道俱乐部案例">#</a> 数据集与邻接矩阵格式（——KarateClub 空手道俱乐部案例）</h4>
+<ul>
+<li>
+<p>Graph Neural Networks</p>
+<ul>
+<li>
+<p>致力于解决<strong>不规则</strong>数据结构 (图像和文本相对格式都固定，但是社交网络与化学分子等格式肯定不是固定的)。</p>
+</li>
+<li>
+<p>GNN 模型<u>迭代更新</u>主要基于图中每个节点及其<strong>邻居</strong>的信息。</p>
+<p><img src="F:%5CTODOIT%5CGNN%5C15.png" alt="15"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>数据集</strong>: <u><strong>Zachary’s karate club network</strong></u></p>
+<ul>
+<li>该图描述了一个空手道俱乐部会员的社交关系，以 34 名会员作为节点，如果两位会员在俱乐部之外仍保持社交关系，则在节点间增加一条边。每人节点具有一个 34 维的特征向量，一共有 78 条边。在收集数据的过程中，管理人员 John A 和教练 Mr.Hi 之间产生了冲突，会员们选择了站队，一半会员跟随 Mr.Hi 成立了新俱乐部，剩下一半会员找了新教练或退出了俱乐部。</li>
+</ul>
+</li>
+<li>
+<p>代码实现：</p>
+<ul>
+<li>
+<p>获取数据集，打印基础数据指标</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch_geometric.datasets <span class="keyword">import</span> KarateClub</span><br><span class="line"></span><br><span class="line">dataset = KarateClub()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Dataset: <span class="subst">&#123;dataset&#125;</span>:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;======================&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Number of graphs: <span class="subst">&#123;<span class="built_in">len</span>(dataset)&#125;</span>&#x27;</span>)  <span class="comment"># 图的数量—1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Number of features: <span class="subst">&#123;dataset.num_features&#125;</span>&#x27;</span>) <span class="comment"># 特征个数—34</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Number of classes: <span class="subst">&#123;dataset.num_classes&#125;</span>&#x27;</span>)  <span class="comment"># 数据种类—4</span></span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">    Dataset: KarateClub():</span><br><span class="line">    ======================</span><br><span class="line">    Number of graphs: <span class="number">1</span></span><br><span class="line">    Number of features: <span class="number">34</span></span><br><span class="line">    Number of classes: <span class="number">4</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>PyTorch Geometric 中的每个图形都由单个 Data 对象表示，该对象包含描述其图形表示的所有信息。我们可以随时打印数据对象，以接收有关其属性及其形状的简短摘要：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = dataset[<span class="number">0</span>]  <span class="comment"># Get the first graph object.</span></span><br><span class="line"><span class="built_in">print</span>(data)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;=========================================================&#x27;</span>)</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">    Data(x=[<span class="number">34</span>, <span class="number">34</span>], edge_index=[<span class="number">2</span>, <span class="number">156</span>], y=[<span class="number">34</span>], train_mask=[<span class="number">34</span>])</span><br><span class="line">	===========================================================</span><br><span class="line">    </span><br><span class="line">    该数据对象具有<span class="number">4</span>个属性：</span><br><span class="line">    （<span class="number">1</span>）edge_index：<span class="string">&quot;2+边的个数&quot;</span>，属性保存有关图连接性的信息，即每个边缘的源节点和目标节点。 </span><br><span class="line">    （<span class="number">2</span>）PyG进一步将节点特征称为x（为<span class="number">34</span>个节点中的每个节点分配了一个<span class="number">34</span>维特征向量），前面表示样本数量，后面表示特征维度。</span><br><span class="line">    （<span class="number">3</span>）节点标签称为y（每个节点被精确地分配为一个类别）。 </span><br><span class="line">    （<span class="number">4</span>）还有一个名为train_mask的附加属性，它描述了我们已经知道其社区归属的节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>详细检查 edge_index 的属性</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> Javascript  </span><br><span class="line">display(Javascript(<span class="string">&#x27;&#x27;&#x27;google.colab.output.setIframeHeight(0, true, &#123;maxHeight: 300&#125;)&#x27;&#x27;&#x27;</span>))</span><br><span class="line"> </span><br><span class="line">edge_index = data.edge_index</span><br><span class="line"><span class="built_in">print</span>(edge_index.t())</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">    &lt;IPython.core.display.Javascript <span class="built_in">object</span>&gt;</span><br><span class="line">tensor([[ <span class="number">0</span>,  <span class="number">1</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">2</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">4</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">5</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">6</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">7</span>],</span><br><span class="line">        [ <span class="number">0</span>,  <span class="number">8</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">10</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">11</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">12</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">13</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">17</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">19</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">21</span>],</span><br><span class="line">        [ <span class="number">0</span>, <span class="number">31</span>],</span><br><span class="line">        ........</span><br><span class="line">        [<span class="number">33</span>,  <span class="number">8</span>],</span><br><span class="line">        [<span class="number">33</span>,  <span class="number">9</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">13</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">14</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">15</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">18</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">20</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">22</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">23</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">26</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">27</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">28</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">29</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">30</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">31</span>],</span><br><span class="line">        [<span class="number">33</span>, <span class="number">32</span>]])</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>networkx 可视化展示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入使用的模块包</span></span><br><span class="line"><span class="keyword">from</span> IPython.core.display_functions <span class="keyword">import</span> display</span><br><span class="line"><span class="keyword">from</span> torch_geometric.datasets <span class="keyword">import</span> KarateClub</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> networkx <span class="keyword">as</span> nx</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> torch_geometric.utils <span class="keyword">import</span> to_networkx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义最后可视化的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">visualize</span>(<span class="params">h, color, epoch=<span class="literal">None</span>, loss=<span class="literal">None</span></span>):</span><br><span class="line">    plt.figure(figsize=(<span class="number">7</span>, <span class="number">7</span>))</span><br><span class="line">    plt.xticks([])</span><br><span class="line">    plt.yticks([])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> torch.is_tensor(h):</span><br><span class="line">        h = h.detach().cpu().numpy()</span><br><span class="line">        plt.scatter(h[:, <span class="number">0</span>], h[:, <span class="number">1</span>], s=<span class="number">140</span>, c=color, cmap=<span class="string">&quot;Set2&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> epoch <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> loss <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            plt.xlabel(<span class="string">f&#x27;Epoch: <span class="subst">&#123;epoch&#125;</span>, Loss: <span class="subst">&#123;loss.item():<span class="number">.4</span>f&#125;</span>&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        nx.draw_networkx(G, pos=nx.spring_layout(G, seed=<span class="number">42</span>), with_labels=<span class="literal">False</span>,</span><br><span class="line">                         node_color=color, cmap=<span class="string">&quot;Set2&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">G = to_networkx(data, to_undirected=<span class="literal">True</span>)	<span class="comment">#data上述步骤已给</span></span><br><span class="line">visualize(G, color=data.y)</span><br></pre></td></tr></table></figure>
+<p>​																<u><strong>可视化</strong></u></p>
+</li>
+<li>
+<p><img src="F:%5CTODOIT%5CGNN%5C16.png" alt="16"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="模型定义与训练方法"><a class="markdownIt-Anchor" href="#模型定义与训练方法">#</a> 模型定义与训练方法</h4>
+<ul>
+<li>
+<p>模型定义</p>
+<ul>
+<li>
+<p>三层 GCN</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> Linear</span><br><span class="line"><span class="keyword">from</span> torch_geometric.nn <span class="keyword">import</span> GCNConv</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GCN</span>(torch.nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(GCN, self).__init__()</span><br><span class="line">        torch.manual_seed(<span class="number">1234</span>)</span><br><span class="line">        self.conv1 = GCNConv(dataset.num_features, <span class="number">4</span>)</span><br><span class="line">        self.conv2 = GCNConv(<span class="number">4</span>, <span class="number">4</span>)	<span class="comment"># 数字表示维度</span></span><br><span class="line">        self.conv3 = GCNConv(<span class="number">4</span>, <span class="number">2</span>)</span><br><span class="line">        self.classifier = Linear(<span class="number">2</span>, dataset.num_classes)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, edge_index</span>):       <span class="comment"># edge_index 为邻接矩阵</span></span><br><span class="line">        h = self.conv1(x, edge_index)</span><br><span class="line">        h = h.tanh()    <span class="comment"># 双曲正切函数</span></span><br><span class="line">        h = self.conv2(h, edge_index)</span><br><span class="line">        h = h.tanh()</span><br><span class="line">        h = self.conv3(h, edge_index)</span><br><span class="line">        h = h.tanh()  <span class="comment"># Final GNN embedding space.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Apply a final (linear) classifier.    全连接</span></span><br><span class="line">        out = self.classifier(h)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out, h</span><br><span class="line"></span><br><span class="line">model = GCN()</span><br><span class="line"><span class="built_in">print</span>(model)</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">    GCN(</span><br><span class="line">  (conv1): GCNConv(<span class="number">34</span>, <span class="number">4</span>)</span><br><span class="line">  (conv2): GCNConv(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">  (conv3): GCNConv(<span class="number">4</span>, <span class="number">2</span>)</span><br><span class="line">  (classifier): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">4</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>输出特征展示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">_, h = model(data.x, data.edge_index)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Embedding shape: <span class="subst">&#123;<span class="built_in">list</span>(h.shape)&#125;</span>&#x27;</span>)</span><br><span class="line">visualize(h, color=data.y)</span><br></pre></td></tr></table></figure>
+<p>​																<u><strong>可视化</strong></u></p>
+<p><img src="F:%5CTODOIT%5CGNN%5C17.png" alt="17"></p>
+</li>
+<li>
+<p><strong>训练模型</strong>（半监督，semi—supervised）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> Javascript  <span class="comment"># Restrict height of output cell.</span></span><br><span class="line"></span><br><span class="line">display(Javascript(<span class="string">&#x27;&#x27;&#x27;google.colab.output.setIframeHeight(0, true, &#123;maxHeight: 430&#125;)&#x27;&#x27;&#x27;</span>))</span><br><span class="line"></span><br><span class="line">criterion = torch.nn.CrossEntropyLoss()  <span class="comment"># Define loss criterion.</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters(), lr=<span class="number">0.01</span>)  <span class="comment"># Define optimizer.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">data</span>):</span><br><span class="line">    optimizer.zero_grad()  <span class="comment"># Clear gradients.</span></span><br><span class="line">    out, h = model(data.x, data.edge_index)  <span class="comment"># Perform a single forward pass.</span></span><br><span class="line">    loss = criterion(out[data.train_mask],</span><br><span class="line">                     data.y[data.train_mask])  <span class="comment"># Compute the loss solely based on the training nodes.</span></span><br><span class="line">    loss.backward()  <span class="comment"># Derive gradients.</span></span><br><span class="line">    optimizer.step()  <span class="comment"># Update parameters based on gradients.</span></span><br><span class="line">    <span class="keyword">return</span> loss, h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">401</span>):</span><br><span class="line">    loss, h = train(data)</span><br><span class="line">    <span class="keyword">if</span> epoch % <span class="number">10</span> == <span class="number">0</span>:</span><br><span class="line">        visualize(h, color=data.y, epoch=epoch, loss=loss)</span><br><span class="line">        time.sleep(<span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<p>​																<strong><u>可视化</u></strong></p>
+<p><img src="F:%5CTODOIT%5CGNN%5C18.png" alt="18"></p>
+<p><img src="F:%5CTODOIT%5CGNN%5C19.png" alt="19"></p>
+</li>
+</ul>
+<h4 id=""><a class="markdownIt-Anchor" href="#">#</a> </h4>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://Aer0Liteee.github.io">Aer0Lite</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://aer0liteee.github.io/post/dee9649a.html">http://aer0liteee.github.io/post/dee9649a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://Aer0Liteee.github.io" target="_blank">Aer0Lite</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avater.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/e73517db.html" title="SQL注入"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL注入</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aer0Lite</div><div class="author-info__description">多少繁华如梦 曾经万紫千红</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Aer0Liteee"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aer0Liteee" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:Aer0Liteeee@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><b><font color="#e66b6d">足</font> <font color="#e66d98">履</font> <font color="#e66cc6">实</font> <font color="#cc6de6">地</font> , <font color="#cde670">能</font> <font color="#e6df72">见</font> <font color="#e6c073">星</font> <font color="#e6a271">河</font> <p align="center"><img src="https://haiyong.site/img/img-blog.csdnimg.cn/f7384c88956d4378b72e47548e19c9f8.gif" width="50" alt="mao"></p> <p align="center">微信号：NULL</p> <p align="center">QQ号：NULL</p></div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+var sentence = document.querySelector("#poem_sentence")
+var author = document.querySelector("#poem_author")
+var dynasty = document.querySelector("#poem_dynasty")
+
+var sentenceText = result.data.content
+sentenceText = sentenceText.substr(0, sentenceText.length - 1);
+sentence.innerHTML = sentenceText
+dynasty.innerHTML = result.data.origin.dynasty
+author.innerHTML = result.data.origin.author + '《' + result.data.origin.title + '》'
+});</script><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#gnn"><span class="toc-number">1.</span> <span class="toc-text"> GNN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"> 应用领域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%B9%89"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"> 图基本模块定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.0.0.3.</span> <span class="toc-text"> 邻接矩阵的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-number">1.0.0.4.</span> <span class="toc-text"> 适用规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97"><span class="toc-number">1.0.0.5.</span> <span class="toc-text"> 消息传递方法计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82gcn%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.6.</span> <span class="toc-text"> 多层 GCN 的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%89%B9%E5%BE%81%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text"> 输出特征的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E5%A4%9A%E5%B1%82gcn"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text"> 为什么要做多层 GCN？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gcn%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0"><span class="toc-number">1.0.0.7.</span> <span class="toc-text"> GCN 基本模型概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.0.8.</span> <span class="toc-text"> 图卷积的基本计算方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9A%84%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">1.0.0.9.</span> <span class="toc-text"> 邻接的矩阵的变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ugcn%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%AE%9A%E4%B9%89u"><span class="toc-number">1.0.0.10.</span> <span class="toc-text"> GCN 基本原理 &#x2F; 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pytorch-geometric%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95%E7%95%A5"><span class="toc-number">1.0.0.11.</span> <span class="toc-text"> PyTorch Geometric 工具包安装与配置方法（略）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8E%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%A0%BC%E5%BC%8Fkarateclub%E7%A9%BA%E6%89%8B%E9%81%93%E4%BF%B1%E4%B9%90%E9%83%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">1.0.0.12.</span> <span class="toc-text"> 数据集与邻接矩阵格式（——KarateClub 空手道俱乐部案例）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.0.13.</span> <span class="toc-text"> 模型定义与训练方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.0.14.</span> <span class="toc-text"> </span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/dee9649a.html" title="GNN-summary.md">GNN-summary.md</a><time datetime="2023-07-04T16:10:08.000Z" title="发表于 2023-07-05 00:10:08">2023-07-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/e73517db.html" title="SQL注入">SQL注入</a><time datetime="2023-07-02T02:11:52.000Z" title="发表于 2023-07-02 10:11:52">2023-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/4a17b156.html" title="Hello World">Hello World</a><time datetime="2023-07-01T01:43:38.368Z" title="发表于 2023-07-01 09:43:38">2023-07-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Aer0Lite</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas> <script defer src="/js/universe.js"></script> <div class="aplayer no-destroy" data-id="8531760283" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div> <script async src="/js/grayscale.js"></script> <script async data-pjax src="/js/sky.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '25e71c4c6c5446169ecbd2211fa940f1';
+  var gaud_map_key = 'de0f097fe7882b17b80f7ae780f26f55';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.23,23.16';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

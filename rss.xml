@@ -2,16 +2,259 @@
 <rss version="2.0">
     <channel>
         <title>Aer0Lite</title>
-        <link>http://example.com</link>
+        <link>http://Aer0Liteee.github.io</link>
         <description></description>
-        <language>en</language>
-        <pubDate>Sun, 02 Jul 2023 10:11:52 +0800</pubDate>
-        <lastBuildDate>Sun, 02 Jul 2023 10:11:52 +0800</lastBuildDate>
+        <language>zh-CN</language>
+        <pubDate>Wed, 05 Jul 2023 00:10:08 +0800</pubDate>
+        <lastBuildDate>Wed, 05 Jul 2023 00:10:08 +0800</lastBuildDate>
         <category>Web</category>
         <item>
-            <guid isPermalink="true">http://example.com/post/e73517db.html</guid>
+            <guid isPermalink="true">http://aer0liteee.github.io/post/dee9649a.html</guid>
+            <title>GNN-summary.md</title>
+            <link>http://aer0liteee.github.io/post/dee9649a.html</link>
+            <pubDate>Wed, 05 Jul 2023 00:10:08 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;gnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gnn&#34;&gt;#&lt;/a&gt; GNN&lt;/h1&gt;
+&lt;h4 id=&#34;应用领域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#应用领域&#34;&gt;#&lt;/a&gt; 应用领域&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;场景分析与问题推理、推荐系统、欺诈检测、知识图谱、道路交通、自动驾驶、化学医疗场景......&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;图基本模块定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图基本模块定义&#34;&gt;#&lt;/a&gt; 图基本模块定义&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;img src=&#34;F:\TODOIT\GNN\1.png&#34; alt=&#34;1&#34; style=&#34;zoom:150%;&#34; /&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GNN 又称图神经网络，是一种直接作用于图结构的神经网络，我们可以把图中的每一个结点 V 当作个体对象，而每一条边 E 当作个体与个体间的某种联系，所有结点组成的关系网就是最后的图 U&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;邻接矩阵的定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#邻接矩阵的定义&#34;&gt;#&lt;/a&gt; 邻接矩阵的定义&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;img src=&#34;F:\TODOIT\GNN\2.png&#34; alt=&#34;2&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;用于表示结点之间相邻的情况，由于图的稀疏性，因此一般的邻接矩阵不是一个 N*N 的矩阵，而保留了 **(source,target)** 的形式，如 [1,0] 则表示起点为 1 终点为 0。&lt;/li&gt;
+&lt;li&gt;每个点通过与它相邻的&lt;strong&gt;邻居&lt;/strong&gt;来进行&lt;strong&gt;更新&lt;/strong&gt;，更新的方式可以自己设置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;适用规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#适用规则&#34;&gt;#&lt;/a&gt; 适用规则&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GNN主要用于解决输入数据不规则的时候，由于图像和文本任务中输入格式很固定，因此图模型并不常用，图网络和其他的神经网络类似都是需要进行特征提取&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;消息传递方法计算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#消息传递方法计算&#34;&gt;#&lt;/a&gt; 消息传递方法计算&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;每个点的特征该如何更新？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;考虑&lt;strong&gt;自身&lt;/strong&gt;的特征与&lt;strong&gt;邻居&lt;/strong&gt;的特征。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C3.png&#34; alt=&#34;3&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;img src=&#34;F:\TODOIT\GNN\5.png&#34; alt=&#34;5&#34; style=&#34;zoom: 150%;&#34; /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;​					自身特征：&lt;strong&gt;h/x&lt;/strong&gt;	可学习参数 (相连边的权值)：&lt;strong&gt;W&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特征更新的方法有很多，可以根据任务自己设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;img src=&#34;F:\TODOIT\GNN\4.png&#34; alt=&#34;3&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;多层gcn的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多层gcn的作用&#34;&gt;#&lt;/a&gt; 多层 GCN 的作用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GCN 可以有多层（本质即更新各部分的特征）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C6.png&#34; alt=&#34;6&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GNN 可以设置为多层结构时的&lt;strong&gt;输入&lt;/strong&gt;和&lt;strong&gt;输出&lt;/strong&gt;都是特征，邻接矩阵不会改变，但每个点上面的特征会发生改变。多层的 GNN 会包含更多的邻居，相当于此时的 **“感受野”**（&lt;u&gt;卷积神经网络名词，可理解为接触到的全局的信息范围）&lt;/u&gt;&lt;strong&gt;增大&lt;/strong&gt;，当每个点具有全局的特征时，此时类似于 transformer 的形式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h5 id=&#34;输出特征的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出特征的作用&#34;&gt;#&lt;/a&gt; 输出特征的作用&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;各个点 / 边特征组合后可以进行图分类…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h5 id=&#34;为什么要做多层gcn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为什么要做多层gcn&#34;&gt;#&lt;/a&gt; 为什么要做多层 GCN？&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;可以使结点具有&lt;strong&gt;全局的特征&lt;/strong&gt;，GCN 主要聚合邻结点的信息，对于任意一个结点，结点特征每迭代依次，就聚合了更高阶的邻结点的信息。随着 GCN 层数的增加，结点的聚合半径（最高邻居结点的阶数）也变大，一旦达到某个阈值，该结点覆盖全图结点。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;但是&lt;/strong&gt;，如果层数很多，每个结点覆盖的结点都会收敛到全图，这就导致每个结点的局部网络结构的多样性大大降低，对于结点自身特征的学习反而不好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gcn基本模型概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gcn基本模型概述&#34;&gt;#&lt;/a&gt; GCN 基本模型概述&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;适合做&lt;strong&gt;半监督任务&lt;/strong&gt;，用某个结点的少量数据也能进行训练&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;图卷积的基本计算方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图卷积的基本计算方法&#34;&gt;#&lt;/a&gt; 图卷积的基本计算方法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GCN 基本思想：&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;消息传递 / 聚合&lt;/strong&gt;，即&lt;u&gt;平均其自身与邻居特征后传入神经网络&lt;/u&gt;（下图橙色结点为例）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C7.png&#34; alt=&#34;7&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络层数：&lt;/p&gt;
+&lt;p&gt;​    GCN 可以做多层，但一般浅做 2、3 层较合适 (6 个人认识全世界理论)，不会很多层&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C8.png&#34; alt=&#34;8&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​                                                 &lt;u&gt;最后得到每个点的特征向量&lt;/u&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;图中基本组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;G&lt;/strong&gt;—— 图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;—— 邻接矩阵&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;D&lt;/strong&gt;—— 各个结点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;F&lt;/strong&gt;—— 每个结点的特征&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C9.png&#34; alt=&#34;9&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特征计算方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;矩阵乘法&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C10.png&#34; alt=&#34;10&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;邻接的矩阵的变换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#邻接的矩阵的变换&#34;&gt;#&lt;/a&gt; 邻接的矩阵的变换&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;考虑自身（将度矩阵考虑进去）&lt;/li&gt;
+&lt;li&gt;左乘对&lt;strong&gt;行&lt;/strong&gt;做&lt;u&gt;归一化&lt;/u&gt;操作 + 右乘对&lt;strong&gt;列&lt;/strong&gt;做&lt;u&gt;归一化&lt;/u&gt;操作（归一化：简化计算的操作）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​															大致想法（下图）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C11.png&#34; alt=&#34;11&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ugcn基本原理定义u&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ugcn基本原理定义u&#34;&gt;#&lt;/a&gt; &lt;u&gt;GCN 基本原理 / 定义&lt;/u&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C12.png&#34; alt=&#34;12&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ReLU&lt;/strong&gt;，全称为：Rectified Linear Unit，是一种人工神经网络中常用的激活函数，通常意义下，其指代数学中的斜坡函数，即 &lt;u&gt;f ( x ) = max ⁡ ( 0 , x )&lt;/u&gt;&lt;br&gt;
+&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C13.png&#34; alt=&#34;13&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GCN 层数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在多个图数据集中，都可以发现两三层比较合适，多反而差了。&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C14.png&#34; alt=&#34;14&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;pytorch-geometric工具包安装与配置方法略&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pytorch-geometric工具包安装与配置方法略&#34;&gt;#&lt;/a&gt; PyTorch Geometric 工具包安装与配置方法（略）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1j8411876K?p=12&amp;amp;vd_source=d1abfb72c73986bf3b64ed4a087cdf09%EF%BC%88&#34;&gt;https://www.bilibili.com/video/BV1j8411876K?p=12&amp;amp;vd_source=d1abfb72c73986bf3b64ed4a087cdf09（&lt;/a&gt;&lt;u&gt;Pytorch Gepmetric&lt;/u&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/pointer_onlysoul/article/details/121354353?utm_medium=distribute.pc_relevant.none-task-blog-2&#34;&gt;https://blog.csdn.net/pointer_onlysoul/article/details/121354353?utm_medium=distribute.pc_relevant.none-task-blog-2&lt;/a&gt;&lt;sub&gt;default&lt;/sub&gt;baidujs_baidulandingword~default-0-121354353-blog-109139329.235&lt;sup&gt;v35&lt;/sup&gt;pc_relevant_default_base3&amp;amp;spm=1001.2101.3001.4242.1&amp;amp;utm_relevant_index=1&lt;/p&gt;
+&lt;p&gt;（&lt;u&gt;Anaconda+PyTorch 安装（非英伟达显卡 + win10+Python3.8）&lt;/u&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/C_chuxin/article/details/82690093&#34;&gt;https://blog.csdn.net/C_chuxin/article/details/82690093&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​				(本&lt;u&gt;地 python 库与新装 Anaconda 库并存&lt;/u&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;数据集与邻接矩阵格式karateclub空手道俱乐部案例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据集与邻接矩阵格式karateclub空手道俱乐部案例&#34;&gt;#&lt;/a&gt; 数据集与邻接矩阵格式（——KarateClub 空手道俱乐部案例）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Graph Neural Networks&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;致力于解决&lt;strong&gt;不规则&lt;/strong&gt;数据结构 (图像和文本相对格式都固定，但是社交网络与化学分子等格式肯定不是固定的)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GNN 模型&lt;u&gt;迭代更新&lt;/u&gt;主要基于图中每个节点及其&lt;strong&gt;邻居&lt;/strong&gt;的信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C15.png&#34; alt=&#34;15&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据集&lt;/strong&gt;: &lt;u&gt;&lt;strong&gt;Zachary’s karate club network&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;该图描述了一个空手道俱乐部会员的社交关系，以 34 名会员作为节点，如果两位会员在俱乐部之外仍保持社交关系，则在节点间增加一条边。每人节点具有一个 34 维的特征向量，一共有 78 条边。在收集数据的过程中，管理人员 John A 和教练 Mr.Hi 之间产生了冲突，会员们选择了站队，一半会员跟随 Mr.Hi 成立了新俱乐部，剩下一半会员找了新教练或退出了俱乐部。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;获取数据集，打印基础数据指标&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; torch_geometric.datasets &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; KarateClub&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;dataset = KarateClub()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Dataset: &lt;span class=&#34;subst&#34;&gt;&amp;#123;dataset&amp;#125;&lt;/span&gt;:&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;======================&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Number of graphs: &lt;span class=&#34;subst&#34;&gt;&amp;#123;&lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(dataset)&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 图的数量—1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Number of features: &lt;span class=&#34;subst&#34;&gt;&amp;#123;dataset.num_features&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;# 特征个数—34&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Number of classes: &lt;span class=&#34;subst&#34;&gt;&amp;#123;dataset.num_classes&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 数据种类—4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Output:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Dataset: KarateClub():&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ======================&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Number of graphs: &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Number of features: &lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Number of classes: &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PyTorch Geometric 中的每个图形都由单个 Data 对象表示，该对象包含描述其图形表示的所有信息。我们可以随时打印数据对象，以接收有关其属性及其形状的简短摘要：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;data = dataset[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# Get the first graph object.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(data)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;=========================================================&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Output:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Data(x=[&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;], edge_index=[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;156&lt;/span&gt;], y=[&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;], train_mask=[&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	===========================================================&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    该数据对象具有&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;个属性：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    （&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;）edge_index：&lt;span class=&#34;string&#34;&gt;&amp;quot;2+边的个数&amp;quot;&lt;/span&gt;，属性保存有关图连接性的信息，即每个边缘的源节点和目标节点。 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    （&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;）PyG进一步将节点特征称为x（为&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;个节点中的每个节点分配了一个&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;维特征向量），前面表示样本数量，后面表示特征维度。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    （&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;）节点标签称为y（每个节点被精确地分配为一个类别）。 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    （&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;）还有一个名为train_mask的附加属性，它描述了我们已经知道其社区归属的节点。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;详细检查 edge_index 的属性&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; IPython.display &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; Javascript  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;display(Javascript(&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&amp;#x27;google.colab.output.setIframeHeight(0, true, &amp;#123;maxHeight: 300&amp;#125;)&amp;#x27;&amp;#x27;&amp;#x27;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;edge_index = data.edge_index&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(edge_index.t())&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Output:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;IPython.core.display.Javascript &lt;span class=&#34;built_in&#34;&gt;object&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;tensor([[ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;11&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;12&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;13&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;17&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;19&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;21&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [ &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;31&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        ........&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;,  &lt;span class=&#34;number&#34;&gt;9&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;13&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;14&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;15&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;18&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;19&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;20&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;22&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;23&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;26&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;27&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;28&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;29&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;30&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;31&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        [&lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;32&lt;/span&gt;]])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;networkx 可视化展示&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 导入使用的模块包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; IPython.core.display_functions &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; display&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; torch_geometric.datasets &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; KarateClub&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; torch&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; networkx &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; nx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; torch_geometric.utils &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; to_networkx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 定义最后可视化的函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;visualize&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;h, color, epoch=&lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;, loss=&lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    plt.figure(figsize=(&lt;span class=&#34;number&#34;&gt;7&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    plt.xticks([])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    plt.yticks([])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; torch.is_tensor(h):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = h.detach().cpu().numpy()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        plt.scatter(h[:, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], h[:, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;], s=&lt;span class=&#34;number&#34;&gt;140&lt;/span&gt;, c=color, cmap=&lt;span class=&#34;string&#34;&gt;&amp;quot;Set2&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; epoch &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;and&lt;/span&gt; loss &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            plt.xlabel(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Epoch: &lt;span class=&#34;subst&#34;&gt;&amp;#123;epoch&amp;#125;&lt;/span&gt;, Loss: &lt;span class=&#34;subst&#34;&gt;&amp;#123;loss.item():&lt;span class=&#34;number&#34;&gt;.4&lt;/span&gt;f&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;, fontsize=&lt;span class=&#34;number&#34;&gt;16&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        nx.draw_networkx(G, pos=nx.spring_layout(G, seed=&lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;), with_labels=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                         node_color=color, cmap=&lt;span class=&#34;string&#34;&gt;&amp;quot;Set2&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    plt.show()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;G = to_networkx(data, to_undirected=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;)	&lt;span class=&#34;comment&#34;&gt;#data上述步骤已给&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;visualize(G, color=data.y)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​																&lt;u&gt;&lt;strong&gt;可视化&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C16.png&#34; alt=&#34;16&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;模型定义与训练方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模型定义与训练方法&#34;&gt;#&lt;/a&gt; 模型定义与训练方法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;模型定义&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;三层 GCN&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; torch&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; torch.nn &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; Linear&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; torch_geometric.nn &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; GCNConv&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;GCN&lt;/span&gt;(torch.nn.Module):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;__init__&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;self&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;super&lt;/span&gt;(GCN, self).__init__()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        torch.manual_seed(&lt;span class=&#34;number&#34;&gt;1234&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.conv1 = GCNConv(dataset.num_features, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.conv2 = GCNConv(&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)	&lt;span class=&#34;comment&#34;&gt;# 数字表示维度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.conv3 = GCNConv(&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.classifier = Linear(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, dataset.num_classes)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;forward&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;self, x, edge_index&lt;/span&gt;):       &lt;span class=&#34;comment&#34;&gt;# edge_index 为邻接矩阵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = self.conv1(x, edge_index)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = h.tanh()    &lt;span class=&#34;comment&#34;&gt;# 双曲正切函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = self.conv2(h, edge_index)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = h.tanh()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = self.conv3(h, edge_index)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        h = h.tanh()  &lt;span class=&#34;comment&#34;&gt;# Final GNN embedding space.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;# Apply a final (linear) classifier.    全连接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        out = self.classifier(h)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; out, h&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model = GCN()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(model)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Output:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    GCN(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  (conv1): GCNConv(&lt;span class=&#34;number&#34;&gt;34&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  (conv2): GCNConv(&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  (conv3): GCNConv(&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  (classifier): Linear(in_features=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, out_features=&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;, bias=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输出特征展示&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;_, h = model(data.x, data.edge_index)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;f&amp;#x27;Embedding shape: &lt;span class=&#34;subst&#34;&gt;&amp;#123;&lt;span class=&#34;built_in&#34;&gt;list&lt;/span&gt;(h.shape)&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;visualize(h, color=data.y)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​																&lt;u&gt;&lt;strong&gt;可视化&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C17.png&#34; alt=&#34;17&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;训练模型&lt;/strong&gt;（半监督，semi—supervised）&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; time&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; IPython.display &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; Javascript  &lt;span class=&#34;comment&#34;&gt;# Restrict height of output cell.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;display(Javascript(&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&amp;#x27;google.colab.output.setIframeHeight(0, true, &amp;#123;maxHeight: 430&amp;#125;)&amp;#x27;&amp;#x27;&amp;#x27;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;criterion = torch.nn.CrossEntropyLoss()  &lt;span class=&#34;comment&#34;&gt;# Define loss criterion.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;optimizer = torch.optim.Adam(model.parameters(), lr=&lt;span class=&#34;number&#34;&gt;0.01&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# Define optimizer.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;train&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;data&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    optimizer.zero_grad()  &lt;span class=&#34;comment&#34;&gt;# Clear gradients.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    out, h = model(data.x, data.edge_index)  &lt;span class=&#34;comment&#34;&gt;# Perform a single forward pass.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    loss = criterion(out[data.train_mask],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                     data.y[data.train_mask])  &lt;span class=&#34;comment&#34;&gt;# Compute the loss solely based on the training nodes.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    loss.backward()  &lt;span class=&#34;comment&#34;&gt;# Derive gradients.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    optimizer.step()  &lt;span class=&#34;comment&#34;&gt;# Update parameters based on gradients.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; loss, h&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; epoch &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;range&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;401&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    loss, h = train(data)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; epoch % &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        visualize(h, color=data.y, epoch=epoch, loss=loss)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        time.sleep(&lt;span class=&#34;number&#34;&gt;0.3&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​																&lt;strong&gt;&lt;u&gt;可视化&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C18.png&#34; alt=&#34;18&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F:%5CTODOIT%5CGNN%5C19.png&#34; alt=&#34;19&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h4&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://aer0liteee.github.io/post/e73517db.html</guid>
             <title>SQL注入</title>
-            <link>http://example.com/post/e73517db.html</link>
+            <link>http://aer0liteee.github.io/post/e73517db.html</link>
             <category>Web</category>
             <pubDate>Sun, 02 Jul 2023 10:11:52 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;sql注入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sql注入&#34;&gt;#&lt;/a&gt; SQL 注入&lt;/h3&gt;
@@ -297,9 +540,9 @@ sleep (n)：延迟响应时间 n 秒&lt;/li&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/post/4a17b156.html</guid>
+            <guid isPermalink="true">http://aer0liteee.github.io/post/4a17b156.html</guid>
             <title>Hello World</title>
-            <link>http://example.com/post/4a17b156.html</link>
+            <link>http://aer0liteee.github.io/post/4a17b156.html</link>
             <pubDate>Sat, 01 Jul 2023 09:43:38 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
