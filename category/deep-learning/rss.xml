@@ -5,11 +5,203 @@
         <link>http://Aer0Liteee.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 05 Jul 2023 17:30:02 +0800</pubDate>
-        <lastBuildDate>Wed, 05 Jul 2023 17:30:02 +0800</lastBuildDate>
+        <pubDate>Sun, 16 Jul 2023 22:44:07 +0800</pubDate>
+        <lastBuildDate>Sun, 16 Jul 2023 22:44:07 +0800</lastBuildDate>
         <category>GNN</category>
         <category>malware</category>
+        <category>MultiModal Learning</category>
         <category>Web</category>
+        <item>
+            <guid isPermalink="true">http://aer0liteee.github.io/post/bdbefb72.html</guid>
+            <title>MML</title>
+            <link>http://aer0liteee.github.io/post/bdbefb72.html</link>
+            <category>MultiModal Learning</category>
+            <pubDate>Sun, 16 Jul 2023 22:44:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;多模态学习multimodal-learning&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多模态学习multimodal-learning&#34;&gt;#&lt;/a&gt; 多模态学习 (MultiModal Learning)&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;多模态机器学习&lt;/u&gt;&lt;/strong&gt;，英文全称 MultiModal Machine Learning (MMML)&lt;/p&gt;
+&lt;h3 id=&#34;模态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模态&#34;&gt;#&lt;/a&gt; 模态&lt;/h3&gt;
+&lt;p&gt;​		&lt;strong&gt;模态&lt;/strong&gt;，是指一些表达或感知事物的方式，每一种&lt;u&gt;信息的来源或者形式&lt;/u&gt;，都可以称为一种模态。例如，人有触觉，听觉，视觉，嗅觉；信息的媒介，有语音、视频、文字等；多种多样的传感器，如雷达、红外、加速度计等，以上的每一种都可以称为一种模态。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051318189.png&#34; alt=&#34;What is Mulimodel&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​															  	&lt;strong&gt;&lt;u&gt;感知模态&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​		我们生活在一个由多种模态（Multimodal）信息构成的世界，包括&lt;strong&gt;视觉信息、听觉信息、文本信息、嗅觉信息&lt;/strong&gt;等等，当研究的问题或者数据集包含多种这样的模态信息时我们称之为多模态问题，研究多模态问题是推动人工智能更好的了解和认知我们周围世界的关键。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;相较于图像、语音、文本等多媒体 (Multi-media) 数据划分形式，“模态” 是一个更为细粒度的概念，&lt;strong&gt;同一媒介下可存在不同的模态&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;比如我们可以把&lt;u&gt;两种不同的语言当做是两种模态&lt;/u&gt;，甚至在&lt;u&gt;两种不同情况下采集到的数据集&lt;/u&gt;，亦可认为是两种模态。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;多模态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多模态&#34;&gt;#&lt;/a&gt; 多模态&lt;/h3&gt;
+&lt;p&gt;​		&lt;strong&gt;多模态&lt;/strong&gt;，即是从多个模态表达或感知事物。 多模态可归类为&lt;u&gt;同质性的模态&lt;/u&gt;，例如从两台相机中分别拍摄的图片；&lt;u&gt;异质性的模态&lt;/u&gt;，例如图片与文本语言的关系。&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;多模态可能有以下三种形式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;来自不同传感器的同一类媒体数据&lt;/strong&gt;。如物联网背景下&lt;u&gt;不同传感器所检测到的同一对象数据&lt;/u&gt;等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;具有不同的数据结构特点、表示形式的表意符号与信息&lt;/strong&gt;。如描述同一对象的结构化、非结构化的数据单元；描述&lt;u&gt;同一数学概念的公式、逻辑符号、函数图及解释性文本&lt;/u&gt;等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;描述同一对象的多媒体数据&lt;/strong&gt;。如互联网环境下描述某一特定对象的&lt;u&gt;视频、图片、语音、文本&lt;/u&gt;等信息。&lt;/p&gt;
+&lt;p&gt;​											下图即为典型的多模态信息形式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211050816652.png&#34; alt=&#34;“下雪”场景的多模态数据(图像、音频与文本)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通常主要研究模态包括 &amp;quot;&lt;strong&gt;3V&lt;/strong&gt;&amp;quot;：即&lt;strong&gt; Verbal (文本)、Vocal (语音)、Visual (视觉)&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;​	人跟人交流时的多模态：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;视觉
+&lt;ul&gt;
+&lt;li&gt;手势：头、眼、手&lt;/li&gt;
+&lt;li&gt;肢体语言：体态、空间距离关系&lt;/li&gt;
+&lt;li&gt;眼神交流：头、眼&lt;/li&gt;
+&lt;li&gt;面部表情：笑容、皱眉……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;语言
+&lt;ul&gt;
+&lt;li&gt;韵律：语调、语音质量&lt;/li&gt;
+&lt;li&gt;声音：哭、笑……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051318784.png&#34; alt=&#34;multimodal communicative behaviors&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;多模态机器学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多模态机器学习&#34;&gt;#&lt;/a&gt; 多模态机器学习&lt;/h3&gt;
+&lt;p&gt;​	&lt;strong&gt;多模态机器学习&lt;/strong&gt;是从多种模态的数据中学习并且提升自身的算法，它不是某一个具体的算法，它是一类算法的总称。&lt;/p&gt;
+&lt;p&gt;从&lt;strong&gt;语义感知&lt;/strong&gt;的角度切入，多模态数据涉及&lt;strong&gt;不同的感知通道&lt;/strong&gt;如视觉、听觉、触觉、嗅觉所接收到的信息；在&lt;strong&gt;数据层面&lt;/strong&gt;理解，多模态数据则可被看作&lt;strong&gt;多种数据类型&lt;/strong&gt;的组合，如图片、数值、文本、符号、音频、时间序列，或者集合、树、图等不同数据结构所组成的复合数据形式，乃至来自不同数据库、不同知识库的各种信息资源的组合。&lt;strong&gt;对多源异构数据的挖掘分析可被理解为多模态学习&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051125254.png&#34; alt=&#34;多模态学习举例&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	   将同个对象（同一种数据）的不同输出形式进行多模态学习融合后进行预测&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;发展历史&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#发展历史&#34;&gt;#&lt;/a&gt; 发展历史&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051008371.png&#34; alt=&#34;多模态发展的四个时期&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;行为时代&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#行为时代&#34;&gt;#&lt;/a&gt; 行为时代&lt;/h3&gt;
+&lt;p&gt;从心理学的角度对多模态这一现象进行剖析。&lt;/p&gt;
+&lt;h3 id=&#34;计算时代&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算时代&#34;&gt;#&lt;/a&gt; 计算时代&lt;/h3&gt;
+&lt;p&gt;利用一些浅层的模型对多模态问题进行研究，其中代表性的应用包括视觉语音联合识别，多模态情感计算等等。&lt;/p&gt;
+&lt;h3 id=&#34;交互时代&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#交互时代&#34;&gt;#&lt;/a&gt; 交互时代&lt;/h3&gt;
+&lt;p&gt;从交互的角度入手，研究多模态识别问题，拟人类多模态交互过程，其中主要的代表作品包括苹果的语音助手 Siri、IDIAP 实验室（瑞士人工智能研究机构）的 AMI 项目（记录会议录音、同步音频视频、转录与注释）等。&lt;/p&gt;
+&lt;h3 id=&#34;深度学习时代&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度学习时代&#34;&gt;#&lt;/a&gt; 深度学习时代&lt;/h3&gt;
+&lt;p&gt;多模态研究发展迅猛，得益于新的大规模多模态数据集、GPU 快速计算、强大的视觉特征抽取能力、强大的语言特征抽取能力。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211050837453.png&#34; alt=&#34;多模态机器学习在Google Trends上的表现&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;典型任务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#典型任务&#34;&gt;#&lt;/a&gt; 典型任务&lt;/h2&gt;
+&lt;h3 id=&#34;language-audio&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#language-audio&#34;&gt;#&lt;/a&gt; Language-Audio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Text-to-Speech Synthesis: 给定文本，生成一段对应的声音。&lt;/li&gt;
+&lt;li&gt;Audio Captioning：给定一段语音，生成一句话总结并描述主要内容。(不是语音识别)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vision-audio&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vision-audio&#34;&gt;#&lt;/a&gt; Vision-Audio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Speech-conditioned Face generation：给定一段话，生成说话人的视频。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Audio-Driven 3D Facial Animation：&lt;u&gt;给定一段话与 3D 人脸模版，生成说话的人脸 3D 动画。&lt;/u&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;​				Apple Vision Pro 头显 + Otter AI 助手：打造全新空间计算体验&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.apple.com/v/apple-vision-pro/a/images/overview/hero/portrait_base__bwsgtdddcl7m_large.jpg&#34; alt=&#34;Person wearing Vision Pro, with eyes visible through front glass&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	苹果在 2023 年的全球开发者大会上发布了一款令人惊艳的产品：Vision Pro。&lt;/p&gt;
+&lt;p&gt;​			超高清的显示屏、先进的空间音频系统、无需手柄的手眼语音交互。&lt;/p&gt;
+&lt;p&gt;Otter 是一个基于深度学习的多模态 AI 助手，它可以通过 Vision Pro 头显的摄像头捕捉用户的视觉输入，分析用户的环境、情境和意图，生成相应的反馈和指导。Otter 可以理解用户的语言、手势和眼神，与用户进行自然和流畅的对话，帮助用户完成各种任务和活动。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;E:%5C%E6%A1%8C%E9%9D%A2%5CGZ%5C%E5%A4%A7%E4%BA%8C%E4%B8%8B%5C8e6b2a5ce8574900a91d6693d9e5ccc5.gif&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;捕获用户视觉、语音输入特征，根据已采集的人脸面部信息生成说话的人脸 3D 动画&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vision-language&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vision-language&#34;&gt;#&lt;/a&gt; Vision-Language&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Image/Video Captioning (图像 / 视频描述)：给定一个图像 / 视频，生成文本描述其主要内容。&lt;/li&gt;
+&lt;li&gt;Vision-and-Language Navigation (视觉 - 语言导航)： 给定自然语言进行指导，使得智能体根据视觉传感器导航到特定的目标。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;定位相关任务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定位相关任务&#34;&gt;#&lt;/a&gt; 定位相关任务&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Object Tracking from Natural Language Query: 给定一段视频和一些文本，追踪视频中文本所描述的对象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;更多模态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更多模态&#34;&gt;#&lt;/a&gt; 更多模态&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Affect Computing (情感计算)：使用语音、视觉 (人脸表情)、文本信息、心电、脑电等模态进行情感识别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;核心技术挑战&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#核心技术挑战&#34;&gt;#&lt;/a&gt; 核心技术挑战&lt;/h2&gt;
+&lt;p&gt;​                                                 &lt;u&gt;表征&lt;/u&gt; &lt;u&gt;翻译&lt;/u&gt; &lt;u&gt;对齐&lt;/u&gt; &lt;u&gt;融合&lt;/u&gt; &lt;u&gt;协同学习&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051339734.png&#34; alt=&#34;多模态学习的技术挑战&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;表征representation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表征representation&#34;&gt;#&lt;/a&gt; 表征 Representation&lt;/h3&gt;
+&lt;p&gt;​	第一个基本挑战是学习如何&lt;strong&gt;利用多种模态的互补性和冗余性的方式表示和总结多模态数据&lt;/strong&gt;（&lt;u&gt;个人理解，即如何表示数据让计算机看得懂、能处理&lt;/u&gt;）。多模态数据的异质性使得构建这样的表示具有挑战性，例如，语言通常是象征性的，而音频和视觉形式将被表示为信号。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;​	&lt;strong&gt;单模态的表征负责将信息表示为计算机可以处理的数值向量或者进一步抽象为更高层的特征向量。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;多模态表征是指通过利用多模态之间的互补性，剔除模态间的冗余性，从而学习到更好的特征表示。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051431550.png&#34; alt=&#34;Representation&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;联合表征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#联合表征&#34;&gt;#&lt;/a&gt; 联合表征&lt;/h4&gt;
+&lt;p&gt;​	&lt;strong&gt;联合表征&lt;/strong&gt;（Joint Representation）&lt;u&gt;将多个模态的信息一起映射到一个统一的多模态向量空间&lt;/u&gt;，Joint 结构注重捕捉多模态的&lt;strong&gt;互补性&lt;/strong&gt;，融合多个输入模态 x1 , x2 获得多模态表征 Xm = f (x1 ,…,xn)，进而利用 Xm 完成某种预测任务。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211052136742.png&#34; alt=&#34;Joint Representation&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	Multimodal learning with deep boltzmann machines (NIPS 2012) 提出将 deep boltzmann machines（DBM） 结构扩充到多模态领域，通过 Multimodal DBM，可以学习到多模态的&lt;strong&gt;联合概率分布&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051458819.png&#34; alt=&#34;Multimodal DBM 模型&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	在获得图像与文本间的&lt;strong&gt;联合概率分布&lt;/strong&gt;后，在应用阶段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入图片，&lt;u&gt;利用条件概率 P (文本 | 图片)，生成文本特征&lt;/u&gt;，可以得到图片相应的文本描述；&lt;/li&gt;
+&lt;li&gt;输入文本，&lt;u&gt;利用条件概率 P (图片 | 文本)，可以生成图片特征&lt;/u&gt;，通过检索出最靠近该特征向量的两个图片实例，可以得到符合文本描述的图片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051506598.png&#34; alt=&#34;Multimodal DBM 应用&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;协同表征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#协同表征&#34;&gt;#&lt;/a&gt; 协同表征&lt;/h4&gt;
+&lt;p&gt;​	协同表征（Coordinated Representation）&lt;u&gt;将多模态中的每个模态分别映射到各自的表示空间，但映射后的向量之间满足一定的相关性约束（例如线性相关）&lt;/u&gt;。Coordinated 结构并不寻求融合而是建模多种模态数据间的&lt;strong&gt;相关性&lt;/strong&gt;，它将多个 (通常是两个) 模态映射到协作空间，表示为：f (x1)～g (x2)，其中 **&lt;u&gt;～&lt;/u&gt;** 表示一种协作关系。网络的优化目标是这种协作关系 (通常是相似性，即最小化 cosine 距离等度量)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211052203950.png&#34; alt=&#34;Coordinated Representation&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;u&gt;NIPS 2014&lt;/u&gt;（一个关于机器学习和计算神经科学领域的人工智能国际会议) ，利用&lt;strong&gt;协同学习到的特征向量之间满足加减算数运算&lt;/strong&gt;这一特性，可以搜索出与给定图片满足 “&lt;strong&gt;指定的转换语义&lt;/strong&gt;” 的图片。例如：狗的图片特征向量 - 狗的文本特征向量 + 猫的文本特征向量 = 猫的图片特征向量 -&amp;gt; 在特征向量空间，根据最近邻距离，检索得到猫的图片。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211090619157.png&#34; alt=&#34;多模态向量空间运算&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;翻译translation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#翻译translation&#34;&gt;#&lt;/a&gt; 翻译 Translation&lt;/h3&gt;
+&lt;p&gt;​	第二个挑战涉及&lt;strong&gt;如何将数据从一种模式转化（映射）到另一种模式&lt;/strong&gt;。不仅数据是异构的，而且模态之间的关系通常是开放式的或主观的。例如，存在多种描述图像的正确方法，并且可能不存在一种完美的翻译。&lt;/p&gt;
+&lt;p&gt;​												&lt;u&gt;基于实例的方法&lt;/u&gt; &lt;u&gt;模型驱动的方法&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051434189.png&#34; alt=&#34;Translation&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;常见应用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常见应用&#34;&gt;#&lt;/a&gt; 常见应用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;机器翻译（Machine Translation）&lt;/strong&gt;：将输入的语言 A（即时）翻译为另一种语言 B。类似的还有唇读（Lip Reading）和语音翻译 （Speech Translation），分别将唇部视觉和语音信息转换为文本信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图片描述（Image captioning) 或者视频描述（Video captioning)&lt;/strong&gt;： 对给定的图片 / 视频形成一段文字描述，以表达图片 / 视频的内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语音合成（Speech Synthesis）&lt;/strong&gt;：根据输入的文本信息，自动合成一段语音信号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;翻译的评估困境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#翻译的评估困境&#34;&gt;#&lt;/a&gt; 翻译的评估困境&lt;/h4&gt;
+&lt;p&gt;​	多模态翻译方法面临的一个主要挑战是它们很难评估（&lt;u&gt;即在无对错之分的情况下判断哪个是更好的&lt;/u&gt;）。语音识别等任务只有一个正确的翻译，而语音合成和媒体描述等任务则没有。有时，就像在语言翻译中，多重答案是正确的，决定哪个翻译更好往往是主观的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;人工评价&lt;/strong&gt;是最理想的评估，但是&lt;u&gt;耗时耗钱&lt;/u&gt;，且需要多样化打分人群的背景以避免偏见。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动化指标&lt;/strong&gt;是视觉描述领域常用的替代方法，包括 BLEU，Meteor，CIDEr，ROUGE 等，但它们被证实与人的评价相关性较弱。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基于检索的评估&lt;/strong&gt;和&lt;strong&gt;弱化任务&lt;/strong&gt;，例如：将图像描述中一对多映射简化为 VQA（&lt;u&gt;给机器一张图片和一个开放式的的自然语言问题，要求机器输出自然语言答案，答案可以是以下任何形式：短语、单词、 (yes/no)、从几个可能的答案中选择正确答案。 VQA 是一个典型的多模态问题，计算机需要同时学会理解图像和文字。&lt;/u&gt;）中一对一的映射，也是解决评估困境的手段。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;对齐alignment&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对齐alignment&#34;&gt;#&lt;/a&gt; 对齐 Alignment&lt;/h3&gt;
+&lt;p&gt;​	第三个挑战是从&lt;strong&gt;两种或多种不同的模态中识别（子）元素之间的直接关系&lt;/strong&gt;。例如，我们可能希望&lt;u&gt;将食谱中的步骤与显示正在制作的菜肴的视频对齐&lt;/u&gt;。为了应对这一挑战，我们需要测量不同模式之间的相似性并处理可能的长期依赖和歧义。&lt;/p&gt;
+&lt;p&gt;​														显式对齐 隐式对齐&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051433591.png&#34; alt=&#34;Alignment&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;显式对齐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#显式对齐&#34;&gt;#&lt;/a&gt; 显式对齐&lt;/h4&gt;
+&lt;p&gt;​	如果模型的&lt;strong&gt;主要目标是对齐来自两个或多个模态的子元素&lt;/strong&gt;，那么我们将其分类为执行显式对齐。显式对齐的一个重要工作是&lt;strong&gt;相似性度量&lt;/strong&gt;。大多数方法都依赖于度量不同模态的子组件之间的相似性作为基本构建块。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211071349090.png&#34; alt=&#34;显式对齐&#34;&gt;&lt;/p&gt;
+&lt;p&gt;包括无监督和弱监督的方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;无监督对齐&lt;/strong&gt;：给定两个模态的数据作为输入，希望模型实现子元素的对齐，但是训练数据没有 “对齐结果” 的标注，模型需要同时学习相似度度量和对齐方式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有监督对齐&lt;/strong&gt;：有监督方法存在标注，可训练模型学习相似度度量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;隐式对齐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#隐式对齐&#34;&gt;#&lt;/a&gt; 隐式对齐&lt;/h4&gt;
+&lt;p&gt;​	隐式对齐&lt;strong&gt;用作另一个任务的中间 (通常是潜在的) 步骤。&lt;/strong&gt; 这允许在许多任务中有更好的表现，包括语音识别、机器翻译、媒体描述和视觉问题回答。这些模型不显式地对齐数据，也不依赖于监督对齐示例，而是学习如何在模型训练期间潜在地对齐数据。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211071428784.png&#34; alt=&#34;隐式对齐&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;融合fusion&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#融合fusion&#34;&gt;#&lt;/a&gt; 融合 Fusion&lt;/h3&gt;
+&lt;p&gt;​	第四个挑战是&lt;strong&gt;结合来自两个或多个模态的信息&lt;/strong&gt;来执行&lt;u&gt;预测&lt;/u&gt;。例如，对于视听语音识别，将嘴唇运动的视觉描述与语音信号融合以预测口语。来自不同模态的信息可能具有不同的预测能力和噪声拓扑，并且可能在至少一种模态中丢失数据。&lt;/p&gt;
+&lt;p&gt;​															模型无关的方法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051435164.png&#34; alt=&#34;Fusion&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;模型无关的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模型无关的方法&#34;&gt;#&lt;/a&gt; 模型无关的方法&lt;/h4&gt;
+&lt;p&gt;​															基于模型的方法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051436546.png&#34; alt=&#34;Fusion&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;基于模型的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基于模型的方法&#34;&gt;#&lt;/a&gt; 基于模型的方法&lt;/h4&gt;
+&lt;h3 id=&#34;协同学习co-learning&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#协同学习co-learning&#34;&gt;#&lt;/a&gt; 协同学习 Co-learning&lt;/h3&gt;
+&lt;p&gt;​	第五个挑战是在模态的表示和它们的预测模型之间转移知识。协同学习探索了&lt;strong&gt;如何从一种模态中学习的知识帮助在不同模态上训练的计算模型&lt;/strong&gt;（&lt;u&gt;使用一个资源丰富的模态信息来辅助另一个资源相对贫瘠的模态进行学习&lt;/u&gt;）。当其中一种模式的资源有限（例如，带注释的数据）时，这一挑战尤其重要。辅助模态（helper modality）通常只参与模型的训练过程，并不参与模型	的测试使用过程&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211051437074.png&#34; alt=&#34;Co-learning&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;并行&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#并行&#34;&gt;#&lt;/a&gt; 并行&lt;/h4&gt;
+&lt;p&gt;​	需要训练数据集，其中来自一种模态的观察结果与来自其他模态的观察结果直接相关，例如在一个视听语音数据集中，视频和语音样本来自同一个说话者。&lt;/p&gt;
+&lt;h4 id=&#34;非并行&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#非并行&#34;&gt;#&lt;/a&gt; 非并行&lt;/h4&gt;
+&lt;p&gt;​	不需要来自不同模式的观察结果之间的直接联系，通常通过使用类别重叠来实现共同学习，例如，在零样本学习中，使用来自 Wikipedia 的纯文本数据集扩展传统的视觉对象识别数据集以改进视觉对象识别的泛化能力。&lt;/p&gt;
+&lt;h4 id=&#34;混合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#混合&#34;&gt;#&lt;/a&gt; 混合&lt;/h4&gt;
+&lt;p&gt;​	通过共享模式或数据集桥接&lt;/p&gt;
+&lt;h2 id=&#34;sota模型-clip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sota模型-clip&#34;&gt;#&lt;/a&gt; SOTA 模型 - CLIP&lt;/h2&gt;
+&lt;p&gt;​	&lt;strong&gt;CLIP&lt;/strong&gt;，全称 Contrastive Language-Image Pre-training，是 OpenAI 最新的一篇 NLP 和 CV 结合的&lt;u&gt;多模态&lt;/u&gt;的工作，在多模态领域迈出了重要的一步。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oss.imzhanghao.com/img/202211081504107.png&#34; alt=&#34;CLIP Zero shot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​			CLIP 主要的贡献就是&lt;u&gt;利用无监督的文本信息，作为监督信号来学习视觉特征&lt;/u&gt;。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://aer0liteee.github.io/post/33e09c9c.html</guid>
             <title>GNN-summary</title>
