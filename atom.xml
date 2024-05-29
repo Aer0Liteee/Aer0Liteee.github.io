@@ -4,10 +4,10 @@
     <title>GWXX</title>
     <link href="http://Aer0Liteee.github.io" />
     <updated>2024-05-29T14:49:47.000Z</updated>
-    <category term="malware" />
     <category term="GNN" />
-    <category term="Web" />
+    <category term="malware" />
     <category term="MultiModal Learning" />
+    <category term="Web" />
     <entry>
         <id>http://aer0liteee.github.io/post/25fed40f.html</id>
         <title>无线网络威胁基于ARP欺骗的中间人攻击技术与防御</title>
@@ -123,11 +123,19 @@ ARP 缓存存储将 IP 地址为  &lt;code&gt;192.169.31.1&lt;/code&gt;  与 MAC
 &lt;h3 id=&#34;单选题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单选题&#34;&gt;#&lt;/a&gt; 单选题&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;ARP 欺骗攻击是一种利用什么协议的攻击方式？ A) IP B) TCP C) ARP D) ICMP&lt;/p&gt;
+&lt;p&gt;ARP 欺骗攻击是一种利用什么协议的攻击方式？&lt;br&gt;
+A) IP&lt;br&gt;
+B) TCP&lt;br&gt;
+C) ARP&lt;br&gt;
+D) ICMP&lt;/p&gt;
 &lt;p&gt;正确答案：C) ARP&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;ARP 欺骗攻击中，攻击者发送什么类型的虚假信息以实施攻击？ A) 虚假 MAC 地址 B) 虚假 IP 地址 C) 虚假端口号 D) 虚假子网掩码&lt;/p&gt;
+&lt;p&gt;ARP 欺骗攻击中，攻击者发送什么类型的虚假信息以实施攻击？&lt;br&gt;
+A) 虚假 MAC 地址&lt;br&gt;
+ B) 虚假 IP 地址&lt;br&gt;
+ C) 虚假端口号&lt;br&gt;
+ D) 虚假子网掩码&lt;/p&gt;
 &lt;p&gt;正确答案：A) 虚假 MAC 地址&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
