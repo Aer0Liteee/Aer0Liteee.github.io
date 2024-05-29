@@ -8,9 +8,9 @@
         <pubDate>Wed, 29 May 2024 22:49:47 +0800</pubDate>
         <lastBuildDate>Wed, 29 May 2024 22:49:47 +0800</lastBuildDate>
         <category>malware</category>
-        <category>MultiModal Learning</category>
         <category>GNN</category>
         <category>Web</category>
+        <category>MultiModal Learning</category>
         <item>
             <guid isPermalink="true">http://aer0liteee.github.io/post/25fed40f.html</guid>
             <title>无线网络威胁基于ARP欺骗的中间人攻击技术与防御</title>
@@ -23,14 +23,14 @@
 &lt;p&gt;在很早之前，中间人攻击就存在，1586  年，苏格兰女王玛丽从监狱向一名支持者发送密码信件，这些信件详细说明了暗杀伊丽莎白一世女王并促成西班牙入侵英格兰的计划。警方早已监控玛丽一举一动，并截获了这些信件，然后解密了它们，警方修改了玛丽的密码信件，要求提供所有同谋者的详细信息，最后苏格兰女王和支持者因为这一证据被处决。&lt;/p&gt;
 &lt;p&gt;这就是早期的中间人攻击。&lt;/p&gt;
 &lt;p&gt;其实中间人攻击不难理解，而且可能在生活中我们也遇到过或者实施过中间人攻击，比如所谓的截胡，仿写等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200111112440723.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xpZ2h0X1RyYXZsbGluZw==,size_16,color_FFFFFF,t_70&#34; alt=&#34;点击查看图片来源&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/6657451cd9c307b7e97c8b70.jpg&#34; alt=&#34;中间人攻击示意图&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-网关&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-网关&#34;&gt;#&lt;/a&gt; 2、网关&lt;/h3&gt;
 &lt;p&gt;网关工作在&lt;a href=&#34;https://so.csdn.net/so/search?q=OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B&amp;amp;spm=1001.2101.3001.7020&#34;&gt; OSI 七层模型&lt;/a&gt;中的传输层或者应用层，用于高层协议的不同网络之间的连接，简单地说，网关就好比是一个房间通向另一个房间的一扇门。&lt;/p&gt;
 &lt;h3 id=&#34;3-arp协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-arp协议&#34;&gt;#&lt;/a&gt; 3、ARP 协议&lt;/h3&gt;
 &lt;p&gt;ARP（Address Resolution Protocol）地址转换协议，工作在&lt;a href=&#34;https://so.csdn.net/so/search?q=OSI%E6%A8%A1%E5%9E%8B&amp;amp;spm=1001.2101.3001.7020&#34;&gt; OSI 模型&lt;/a&gt;的数据链路层，在以太网中，网络设备之间互相通信是用 MAC 地址而不是 IP 地址，ARP 协议就是用来把 IP 地址转换为 MAC 地址的。而 RARP 和 ARP 相反，它是反向地址转换协议，把 MAC 地址转换为 IP 地址。&lt;/p&gt;
 &lt;p&gt;假设 A (192.168.1.2) 与 B (192.168.1.3) 在同一局域网，A 要和 B 实现通信 ——&lt;/p&gt;
 &lt;p&gt;A 首先会发送一个数据包到广播地址 (192.168.1.255)，该数据包中包含了源 IP（A）、源 MAC、目的 IP（B）、目的 MAC，这个数据包会被发放给局域网中所有的主机，但是只有 B 主机会回复一个包含了源 IP（B）、源 MAC、目的 IP（A）、目的 MAC 的数据包给 A，同时 A 主机会将返回的这个地址保存在 ARP 缓存表中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img1.baidu.com/it/u=637182770,1444691996&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=138&amp;amp;f=JPEG?w=1007&amp;amp;h=500&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img1.baidu.com/it/u=637182770,1444691996&amp;amp;fm=253&amp;amp;fmt=auto&amp;amp;app=138&amp;amp;f=JPEG?w=1007&amp;amp;h=500&#34; alt=&#34;ARP请求示意图&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;二-攻击原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-攻击原理&#34;&gt;#&lt;/a&gt; 二、攻击原理&lt;/h2&gt;
 &lt;h3 id=&#34;1-arp欺骗原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-arp欺骗原理&#34;&gt;#&lt;/a&gt; 1、ARP 欺骗原理&lt;/h3&gt;
 &lt;p&gt;​		在每台主机都有一个 ARP 缓存表，缓存表中记录了 IP 地址与 MAC 地址的对应关系，而局域网数据传输依靠的是 MAC 地址。&lt;/p&gt;
@@ -40,7 +40,7 @@
 &lt;p&gt;C 再假扮 A，告诉邮递员：“我就是 A” （C 向网关 G 发送构造好的返回包，源 IP 为 A 192.168.1.2，源 MAC 地址为自己的 MAC 地址），智商捉急的邮递员想都没想就相信了，以后就把 B 的来信送给了 C，C 当然就可以知道 A 和 B 之间聊了些什么&lt;/p&gt;
 &lt;p&gt;上面 ABCG 的故事就是 ARP 双向欺骗的原理了&lt;/p&gt;
 &lt;p&gt;ARP 单向欺骗就更好理解了，C 只向 A 发送一个返回包，告诉 A：G 192.168.1.1 的 MAC 地址为  5c-63-bf-79-1d-fa（一个错误的 mac 地址），A 把这个信息记录在了缓存表中，而 G 的缓存表不变，也就是说，A 把数据包给了 C，而 G 的包还是给 A，这样就是 ARP 单向欺骗了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/2188248/202011/2188248-20201105213353500-1937266971.png&#34; alt=&#34;点击查看图片来源&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/6657469fd9c307b7e97e56ed.png&#34; alt=&#34;ARP欺骗原理&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-中间人攻击&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-中间人攻击&#34;&gt;#&lt;/a&gt; 2、中间人攻击&lt;/h3&gt;
 &lt;p&gt;中间人攻击分为两个步骤：&lt;/p&gt;
 &lt;ul&gt;
@@ -86,19 +86,19 @@ ARP 缓存存储将 IP 地址为  &lt;code&gt;192.169.31.1&lt;/code&gt;  与 MAC
 &lt;h2 id=&#34;三-实战演习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-实战演习&#34;&gt;#&lt;/a&gt; 三、实战演习&lt;/h2&gt;
 &lt;p&gt;下面引用网上的一篇博客的实验实战体验一下 ARP 欺骗的实现：&lt;/p&gt;
 &lt;p&gt;首先，ARP 缓存表中默认已经存在了网关 IP、MAC 地址的记录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143154886?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66574703d9c307b7e97ed570.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;看一下目标主机的 ARP 缓存表&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143350506?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66574703d9c307b7e97ed583.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;目标 IP 与本机 IP&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143458603?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66574703d9c307b7e97ed5a6.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;再进行 arp 欺骗之前必须要开启 IP 转发，否则当欺骗成功之后，目标机会断网，这样会被对方察觉&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;　sysctl -w net.ipv4.ip_forward=1  或者 echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143541848?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66574703d9c307b7e97ed5b7.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;向目标 192.168.124.133 发送返回包，包含内容：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;　　源ip：192.168.124.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;　　源MAC：00:0c:29:86:a1:04&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;　　此时再来看目标主机ARP缓存&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143759811?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66574704d9c307b7e97ed5c9.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以看出目标主机 arp 缓存已经发生了变化，在缓存表中所记录的网关（192.168.124.2）的 MAC 已经变为了攻击者的 MAC&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20180831143840115?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0luZGV4Q1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/6657476ad9c307b7e97f5be0.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;四-防御方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#四-防御方法&#34;&gt;#&lt;/a&gt; 四、防御方法&lt;/h2&gt;
 &lt;p&gt;中间人攻击得场景还是蛮多得，而且非常常见，那么平时我们应该如何避免中间人攻击呢？&lt;/p&gt;
 &lt;h3 id=&#34;1-不乱点可疑链接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-不乱点可疑链接&#34;&gt;#&lt;/a&gt; 1、不乱点可疑链接 ⭐&lt;/h3&gt;
