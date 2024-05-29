@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Aer0Lite</title>
+        <title>GWXX</title>
         <link>http://Aer0Liteee.github.io</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Wed, 29 May 2024 22:49:47 +0800</pubDate>
         <lastBuildDate>Wed, 29 May 2024 22:49:47 +0800</lastBuildDate>
         <category>malware</category>
-        <category>GNN</category>
         <category>MultiModal Learning</category>
+        <category>GNN</category>
         <category>Web</category>
         <item>
             <guid isPermalink="true">http://aer0liteee.github.io/post/25fed40f.html</guid>
